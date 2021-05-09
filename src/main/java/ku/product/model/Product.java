@@ -12,6 +12,9 @@ public class Product {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
+    private String name;
+    private double price;
+
     public long getId() {
         return id;
     }
@@ -35,11 +38,4 @@ public class Product {
     public void setPrice(double price) {
         this.price = price;
     }
-
-    private String name;
-    private double price;
-
-    // ... generate all getters / setters
-
 }
-

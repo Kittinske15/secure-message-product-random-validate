@@ -9,13 +9,13 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+@CrossOrigin(origins = "http://localhost:5000")
 @RestController
 @RequestMapping("/api/products")
 public class ProductController {
 
     @Autowired
-    ProductService productService;
-
+    private ProductService productService;
 
     @GetMapping
     public List<Product> getAll() {
@@ -26,6 +26,7 @@ public class ProductController {
     public ResponseEntity<String> createProduct(@RequestBody Product product) {
         productService.createProduct(product);
         return new ResponseEntity<String>("Product created successfully",
-                HttpStatus.OK);
+                                          HttpStatus.OK);
     }
+
 }

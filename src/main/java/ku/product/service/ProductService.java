@@ -11,7 +11,7 @@ import java.util.List;
 public class ProductService {
 
     @Autowired
-    ProductRepository productRepository;
+    private ProductRepository productRepository;
 
     public void createProduct(Product product) {
         productRepository.save(product);
@@ -20,5 +20,5 @@ public class ProductService {
     public List<Product> getAllProducts() {
         return productRepository.findAll();
     }
-}
 
+}
